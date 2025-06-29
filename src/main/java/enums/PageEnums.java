@@ -56,7 +56,7 @@ public enum PageEnums {
     LOG(By.xpath("//android.widget.ImageButton[contains(@content-desc, 'log')]"), "Perform logarithm"),
     MOREOPTIONS(By.xpath("//android.widget.ImageView[@content-desc=\"More options\"]"),"click more options"),
     HISTORY(By.xpath("//android.widget.TextView[@resource-id=\"com.google.android.calculator:id/title\" and @text=\"History\"]"), "verify history"),
-    VERIFYHISOPTION(By.xpath("(//android.widget.ImageView[@content-desc=\"More options\"])[1]"),"click history more options"),
+    VERIFYHISOPTION(By.xpath("(//android.widget.ImageView[@content-desc=\"More options\"])[1]"),"click history more options "),
     VERIFYHISTRY(By.xpath("//android.widget.TextView[@resource-id=\"com.google.android.calculator:id/history_date\"]"),"verify history"),
     CLEARTEXT(By.xpath("/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout"),"clear text"),
     CLICKCLEAR(By.xpath("//android.widget.Button[@resource-id=\"android:id/button1\"]"),"click clear "),

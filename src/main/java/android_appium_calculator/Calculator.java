@@ -620,7 +620,7 @@ public static String performInvSin() {
     public static void quitApp() {
         if (driver != null) {
             driver.quit();
-            System.out.println("App Closed.");
+            System.out.println("App Closed. ");
         }
     }
 }

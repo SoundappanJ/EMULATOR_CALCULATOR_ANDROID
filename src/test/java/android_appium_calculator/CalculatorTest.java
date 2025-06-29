@@ -38,7 +38,7 @@ public class CalculatorTest {
         System.out.println("===TC_01: TEST ADDITION===");
         String result = Calculator.performAddition();
         Assert.assertEquals(result.trim(), TestData.getExpectedData("expected add ans"), "Result should be 3");
-        System.out.println("====ADDITION TEST SUCCESSFULLY COMPLETED===");
+        System.out.println("=====ADDITION TEST SUCCESSFULLY COMPLETED====");
 
     }
 
