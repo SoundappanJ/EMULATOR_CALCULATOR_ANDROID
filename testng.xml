@@ -2,10 +2,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
 
-    <listeners>
-        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-    </listeners>
-
     <test verbose="2" preserve-order="true" name="C:/Users/AD/IdeaProjects/EULATOR_APPIUM">
         <classes>
             <class name="android_appium_calculator.CalculatorTest">
