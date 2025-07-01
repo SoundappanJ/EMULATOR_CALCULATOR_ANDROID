@@ -5,12 +5,7 @@ import core.DriverManager;
 import enums.PageEnums;
 import enums.Timeout;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.DesiredCapabilities;
-
-import java.net.URL;
 
 
 public class Calculator {
@@ -513,7 +508,6 @@ public static String performInvSin() {
     }
 
     public static String Natlog() {
-
         clicknaturalLog();
         clickFour();
         clickParen();
