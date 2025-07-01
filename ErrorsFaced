@@ -1,0 +1,134 @@
+1. Appium Server Start Issues
+Error: Error executing adbExec, Appium server not responding
+
+Cause: Emulator not properly running or Appium server not started.
+
+Fix:
+
+Make sure the Android Emulator is started.
+
+Start Appium server (appium or via Appium Inspector).
+
+
+
+
+2. SessionNotCreatedException - 404 Response
+Error: Could not start a new session. Response code 404
+
+Cause: Appium server is not running on expected port or invalid endpoint used.
+
+Fix:
+
+Ensure Appium server is started at http://127.0.0.1:4723.
+
+Use correct URL in new AndroidDriver<>(new URL(...), options).
+
+
+
+
+3. Instrumentation Process Not Running
+Error: 'POST /element' cannot be proxied to UiAutomator2 server because the instrumentation process is not running
+
+Cause: Appium failed to start UiAutomator2 server on the device/emulator.
+
+Fix:
+
+Restart emulator.
+
+Ensure uiautomator2-server-debug-androidTest.apk is properly installed by Appium. or rerun the appium server
+
+Reinstall Appium or clean .appium folder.
+
+
+
+
+4. Driver Null / App Launch Failed
+Error: Driver is null. App launch failed
+
+Cause: AndroidDriver not initialized due to earlier exceptions.
+
+Fix:
+
+Check Appium logs for the root error.
+
+Confirm all capabilities are correct.
+
+
+
+
+5. Incorrect Capabilities or URL
+
+prevoius:
+
+
+//                DesiredCapabilities caps = new DesiredCapabilities();
+//                caps.setCapability("platformName", "Android");
+//                caps.setCapability("automationName", "UiAutomator2");
+//                caps.setCapability("deviceName", "Android Emulator");
+//                caps.setCapability("platformVersion", "14");
+//                caps.setCapability("appPackage", "com.google.android.calculator");
+//                caps.setCapability("appActivity", "com.android.calculator2.Calculator");
+//                caps.setCapability("noReset", false);
+//
+
+Error: No session created or connection issues.
+
+Cause: Improper DesiredCapabilities or URL structure.
+
+Fix:
+
+Use UiAutomator2Options for Appium v2 instead of plain DesiredCapabilities.
+
+Example valid setup:
+
+java
+Copy
+Edit
+UiAutomator2Options options = new UiAutomator2Options()
+    .setPlatformName("Android")
+    .setAutomationName("UiAutomator2")
+    .setDeviceName("Pixel 4 API 34")
+    .setPlatformVersion("14")
+    .setAppPackage("com.google.android.calculator")
+    .setAppActivity("com.android.calculator2.Calculator")
+    .setNoReset(false)
+    .setFullReset(false)
+    .amend("ignoreHiddenApiPolicyError", true)
+    .amend("enforceAppInstall", false);
+
+
+
+
+
+6. Appium Doctor Warning
+Message: AppiumDoctor [Deprecated]
+
+Fix: Install the latest version via:
+
+bash
+Copy
+Edit
+npm install @appium/doctor -g
+
+
+
+❌ IllegalStateException: Unexpected value: expected chainoperation ans
+Test Case: testChainedOperation
+
+Error Location:
+
+text
+Copy
+Edit
+at TestData.TestData.getExpectedData(TestData.java:30)
+Cause: No matching key "chainoperation ans" found in test data source (likely a Map or switch-case).
+
+Fix:
+
+before:
+chainOperation ans ---> in TestData class
+
+After fixed the error: chain operation ans ---> in TestData Class
+Ensure "chainoperation ans" key is present in test data map or logic.
+
+Check for typos or missing case.

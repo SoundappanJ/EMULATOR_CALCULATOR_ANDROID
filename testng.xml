@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+
+    <test verbose="2" preserve-order="true" name="C:/Users/AD/IdeaProjects/EULATOR_APPIUM">
+        <classes>
+            <class name="android_appium_calculator.CalculatorTest">
+                <methods>
+                    <include name="testAddition"/>
+                    <include name="testSubtraction"/>
+                    <include name="testMultiplication"/>
+                    <include name="testDivision"/>
+                    <include name="testDivisionByZero"/>
+                    <include name="testClearText"/>
+                    <include name="testChainedOperation"/>
+                    <include name="testBackSpace"/>
+                    <include name="testDecimalpoint"/>
+                    <include name="testSquareRoot"/>
+                    <include name="testPiOperation"/>
+                    <include name="testPowerOperation"/>
+                    <include name="testFactorial"/>
+                    <include name="testInvSinRad"/>
+                    <include name="testInvCosDeg"/>
+                    <include name="testInvTanRad"/>
+                    <include name="testInvExpRad"/>
+                    <include name="testInvTenPowRad"/>
+                    <include name="testEuler"/>
+                    <include name="testNaturalLog"/>
+                    <include name="testLog"/>
+                    <include name="testHistory"/>
+                    <include name="testDarkMode"/>
+                    <include name="testLightMode"/>
+                    <include name="testSysDefault"/>
+                    <include name="testPrivacy"/>
+                    <include name="testFeedback"/>
+                    <include name="testHelp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
