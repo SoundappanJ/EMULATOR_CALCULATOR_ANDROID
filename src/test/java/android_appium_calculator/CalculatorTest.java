@@ -1,7 +1,6 @@
-package testPage;
+package android_appium_calculator;
 
 import TestData.TestData;
-import android_appium_calculator.Calculator;
 import io.appium.java_client.android.AndroidDriver;
 import core.Listener;
 import org.testng.Assert;
