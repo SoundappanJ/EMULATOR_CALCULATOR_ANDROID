@@ -29,6 +29,12 @@
             <version>4.33.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>4.33.0</version>
+        </dependency>
+
         <!-- Logging -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -41,7 +47,7 @@
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
             <version>7.11.0</version>
-            <scope>test</scope>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Commons IO -->
@@ -72,26 +78,26 @@
                 </configuration>
             </plugin>
 
-            <!-- Surefire Plugin with Allure Listener -->
+            <!-- Allure Maven Plugin -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.11.2</version>
+            </plugin>
+
+            <!-- Surefire Plugin for running TestNG tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <properties>
-                        <property>
-                            <name>listener</name>
-                            <value>io.qameta.allure.testng.AllureTestNg</value>
-                        </property>
-                    </properties>
+                    <rerunFailingTestsCount>0</rerunFailingTestsCount> <!-- Prevent auto-retry -->
+                    <testFailureIgnore>false</testFailureIgnore>
                     <suiteXmlFiles>
                         <suiteXmlFile>testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
-
-            <!-- Allure Maven Plugin -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
@@ -100,6 +106,8 @@
                     <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
                 </configuration>
             </plugin>
+
+
         </plugins>
     </build>
 </project>
